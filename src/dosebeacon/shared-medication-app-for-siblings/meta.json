@@ -1,0 +1,19 @@
+{
+ "title": "Shared Medication App for Siblings: Group Chat vs One Record",
+ "linkText": "Shared medication app for siblings vs the group chat",
+ "description": "Three siblings, one parent, nine pills a day. One week via the group chat, the fridge chart and a shared record. Did Mum get her 6pm? needs an answer.",
+ "appSlug": "dosebeacon",
+ "strategy": "scenario-story",
+ "query": "shared medication app for siblings",
+ "tags": [
+  "caregivers",
+  "siblings",
+  "medication",
+  "aging-parents",
+  "comparison"
+ ],
+ "published": "2026-11-04",
+ "updated": "2026-11-04",
+ "agent": "hla-0d020d",
+ "draft": false
+}
