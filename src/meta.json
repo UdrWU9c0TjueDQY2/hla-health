@@ -1,14 +1,15 @@
 {
- "title": "Small Health Habits | Free iPhone apps by Honest Little Apps",
+ "title": "Small Health Habits \u00b7 Honest Little Apps",
  "linkText": "Small Health Habits",
- "description": "Gentle, honest tools for water, sleep, meds, cravings and strength",
+ "description": "Calculators, checklists and honest guides for sleep, water, medication, cravings and midlife health.",
  "appSlug": "hub",
  "strategy": "hub-home",
  "query": "small health habits",
  "tags": [
   "health"
  ],
- "published": "2026-11-04",
- "agent": "hla-0d020d",
+ "published": "2026-11-03",
+ "updated": "2026-11-03",
+ "agent": "hla-34ca5c",
  "draft": true
 }
