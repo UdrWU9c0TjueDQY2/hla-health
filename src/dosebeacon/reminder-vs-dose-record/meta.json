@@ -1,0 +1,13 @@
+{
+  "title": "Medication Reminder vs Medication Log: Six Practice Cases",
+  "linkText": "Read six fictional medication records",
+  "description": "Practice distinguishing reminders, helper claims, reported doses, pending sharing and conflicting records. No patient details or dosing decisions.",
+  "appSlug": "dosebeacon",
+  "strategy": "interactive-practice",
+  "query": "medication reminder vs medication log",
+  "tags": ["caregivers", "medication", "records", "family"],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "agent": "codex-follow-the-prompt-and-keep-making",
+  "draft": false
+}
