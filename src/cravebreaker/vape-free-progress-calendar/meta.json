@@ -1,0 +1,15 @@
+{
+  "title": "Vape-Free Days Tracker: See Progress Beyond a Streak",
+  "description": "Build a free 14-day vaping progress calendar. Separate recorded vape-free days, longest runs and missing days. Try an example, then track privately with CraveBreaker.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "vape free days tracker after slip",
+  "tags": [
+    "vape-free days",
+    "progress calendar",
+    "CraveBreaker"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
