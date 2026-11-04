@@ -1,0 +1,43 @@
+{
+ "name": "Small Health Habits",
+ "tagline": "Gentle, honest tools for water, sleep, meds, cravings and strength",
+ "baseUrl": "https://small-health-habits.pages.dev",
+ "indexNowKey": "c2b47d2851264c1a5841b855b1193b5e",
+ "apps": [
+  {
+   "slug": "dropkin",
+   "name": "Dropkin: Water Reminder",
+   "id": 6806471522
+  },
+  {
+   "slug": "sturdy",
+   "name": "Sturdy: Strength on GLP-1",
+   "id": 6800233450
+  },
+  {
+   "slug": "my-midlife-story",
+   "name": "My Midlife Story: Menopause",
+   "id": 6814637835
+  },
+  {
+   "slug": "dosebeacon",
+   "name": "DoseBeacon: Pill Reminder",
+   "id": 6796910918
+  },
+  {
+   "slug": "cravebreaker",
+   "name": "CraveBreaker: Quit Vaping",
+   "id": 6787461078
+  },
+  {
+   "slug": "body-unpacked",
+   "name": "Body Unpacked: Health Atlas",
+   "id": 6819135509
+  },
+  {
+   "slug": "sleepward",
+   "name": "Sleepward: Bedtime Routine",
+   "id": 6796299594
+  }
+ ]
+}
