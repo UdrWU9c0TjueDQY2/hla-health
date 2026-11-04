@@ -1,0 +1,8 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const els={};function el(){return {textContent:'',children:[],attrs:{'aria-expanded':'false'},listeners:{},setAttribute(k,v){this.attrs[k]=v},getAttribute(k){return this.attrs[k]},addEventListener(k,v){this.listeners[k]=v},replaceChildren(){this.children=[]},append(x){this.children.push(x)}}}
+const cards=[0,1,2].map(n=>{const children={strong:el(),'.hint':el()};return {...el(),dataset:{card:String(n)},querySelector:s=>children[s]}});const buttons=[4,7].map(n=>({...el(),dataset:{rows:String(n)}}));let printed=0;
+const ctx={document:{querySelectorAll:s=>s==='[data-card]'?cards:buttons,getElementById:id=>els[id]??=el(),createElement:el},window:{print:()=>printed++}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/../src/my-midlife-story/symptom-diary-printable/diary.js','utf8'),ctx);
+for(const card of cards){card.listeners.click();assert.equal(card.attrs['aria-expanded'],'true');assert.ok(card.querySelector('strong').textContent.length>40);card.listeners.click();assert.equal(card.attrs['aria-expanded'],'false');}
+for(const b of buttons){b.listeners.click();assert.equal(els.rows.children.length,Number(b.dataset.rows));assert.equal(els.rows.attrs['data-count'],b.dataset.rows);for(const row of els.rows.children)assert.equal(row.children.length,3);}
+els.print.listeners.click();assert.equal(printed,1);const html=fs.readFileSync(__dirname+'/../src/my-midlife-story/symptom-diary-printable/index.html','utf8');assert.equal((html.match(/<h1>/g)||[]).length,1);assert.ok(!/[\uFFFD\x00-\x08\x0e-\x1f]/.test(html));assert.ok(!/<input|<textarea/.test(html));console.log('Three reversible cards, both row counts, print wiring and no health-data input passed.');
+
