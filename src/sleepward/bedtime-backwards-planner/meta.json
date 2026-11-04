@@ -1,0 +1,15 @@
+{
+  "title": "Bedtime Routine Calculator: Plan Your Evening Backwards",
+  "description": "Enter your own routine steps and chosen finish time. Get a copyable timetable with midnight transitions labelled.",
+  "appSlug": "sleepward",
+  "strategy": "interactive-planner",
+  "query": "bedtime routine time calculator",
+  "tags": [
+    "evening",
+    "routine",
+    "planning"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
