@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Choose diary lines for an appointment | My Midlife Story</title><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/symptom-diary-printable/choose-lines.html"><meta name="description" content="Choose specific lines from your notes to build a short appointment excerpt. Review exactly what will be copied or printed.">
+<style>
+*{box-sizing:border-box}body{margin:0;color:#362d36;background:#fbf7ee;font:16px/1.6 system-ui,sans-serif}main{max-width:790px;padding:24px clamp(16px,5vw,52px) 48px;margin:auto}a{color:#6c365b}h1{font:700 clamp(2.4rem,7vw,4.2rem)/1.05 Georgia,serif;letter-spacing:-.04em;margin:2rem 0 .8rem}h2{font:700 1.5rem Georgia,serif}section{background:#fffefb;padding:clamp(1rem,3vw,1.6rem);margin:1rem 0;border:1px solid #cdbfc5;border-radius:10px}textarea{display:block;width:100%;padding:.75rem;border:1px solid #8b7883;border-radius:5px;font:inherit;color:inherit;resize:vertical}label{display:block;font-weight:650;margin-bottom:.35rem}.options{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}button,.cta{display:inline-block;min-height:44px;padding:.55rem .95rem;border:1px solid #6c365b;border-radius:5px;font:650 1rem system-ui;background:#6c365b;color:#fff;cursor:pointer}.secondary{background:white;color:#5f3453}button:disabled{background:#ece8e8;color:#675d61;cursor:default;border-color:#bcb1b7}.row{display:flex;align-items:flex-start;gap:.7rem;min-height:44px;padding:.55rem .5rem;border-bottom:1px solid #e8dfe3;font-weight:450;overflow-wrap:anywhere}.row input{margin-top:.3rem;flex-shrink:0}.row span{white-space:pre-wrap}.fine{font-size:.9rem}.status{min-height:1.5rem}.print-only{display:none}button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #b25a24;outline-offset:3px}@media print{body{background:white;color:black}main{max-width:none;padding:0}main>*{display:none!important}main>.print-only{display:block!important}.print-only p{white-space:pre-wrap;overflow-wrap:anywhere}}
+</style></head><body><main><a href="./">← Symptom diary worksheet</a><h1>Choose which notes to bring.</h1><p>Write one observation or question per line. Select the lines you want in a short appointment excerpt, then review it before copying or printing. You decide which details belong.</p>
+<section><label for="notes">Your starting notes</label><textarea id="notes" rows="5" maxlength="6000" spellcheck="false" autocomplete="off" placeholder="One observation or question per line"></textarea><div class="options"><button id="select-lines" type="button">Choose lines</button><button id="example" class="secondary" type="button">Use a fictional example</button><button id="clear" class="secondary" type="button">Clear this page</button></div><p class="fine">The page does not send or store entries. Copying puts the excerpt on your device’s clipboard. Clearing this page does not clear your clipboard.</p></section>
+<section id="selection" hidden><h2 id="select-heading" tabindex="-1">Include only the lines you want</h2><div id="choices"></div></section>
+<section id="preview" hidden><h2>Review your excerpt</h2><textarea id="excerpt" rows="4" aria-label="Selected excerpt" readonly></textarea><div class="options"><button id="copy" disabled>Copy excerpt</button><button id="print" class="secondary" disabled>Print excerpt</button></div></section>
+<p id="status" class="status" role="status"></p><p>My Midlife Story can help you keep an ongoing record on your device. This page does not transfer notes to the app.</p><a class="cta" href="https://apps.apple.com/us/app/my-midlife-story-menopause/id6814637835">View My Midlife Story on the App Store</a><p class="fine">A writing worksheet from Honest Little Apps. It does not interpret symptoms.</p>
+<div class="print-only"><h2>Notes I chose for my appointment</h2><p id="print-text"></p></div>
+<script>
+const el=id=>document.getElementById(id);let version=0;
+function invalidate(){
+ version++;el('choices').replaceChildren();el('excerpt').value='';el('print-text').textContent='';
+ el('selection').hidden=true;el('preview').hidden=true;el('copy').disabled=true;el('print').disabled=true;el('status').textContent='';
+}
+function selectLines(){
+ invalidate();const lines=el('notes').value.split(/\r?\n/).filter(line=>line.trim());
+ if(!lines.length){el('status').textContent='Add a note or choose the fictional example first.';el('notes').focus();return;}
+ for(const text of lines){
+   const label=document.createElement('label'),input=document.createElement('input'),span=document.createElement('span');
+   label.className='row';input.type='checkbox';span.textContent=text;
+   label.append(input,span);el('choices').append(label);
+ }
+ el('selection').hidden=false;el('preview').hidden=false;el('select-heading').focus();el('status').textContent='No lines selected yet.';
+}
+el('choices').addEventListener('change',()=>{
+ version++;const picked=[...el('choices').querySelectorAll('input:checked')].map(item=>item.nextElementSibling.textContent);
+ const excerpt=picked.join('\n');el('excerpt').value=excerpt;el('print-text').textContent=excerpt;el('copy').disabled=el('print').disabled=!picked.length;
+ el('status').textContent=picked.length+' of '+el('choices').children.length+' lines selected.';
+});
+el('notes').addEventListener('input',invalidate);el('select-lines').addEventListener('click',selectLines);
+el('example').addEventListener('click',()=>{
+ if(el('notes').value&&!confirm('Replace your starting notes and selection with the fictional example?'))return;
+ el('notes').value='Mon: I woke up before my alarm.\nTue: A private detail I want to keep in my diary.\nMy question: Which details would be helpful to record before our next visit?';selectLines();
+});
+el('clear').addEventListener('click',()=>{
+ if(el('notes').value&&!confirm('Remove all starting notes and selected lines from this page?'))return;
+ el('notes').value='';invalidate();el('notes').focus();el('status').textContent='Page cleared.';
+});
+el('copy').addEventListener('click',async()=>{
+ const current=version,text=el('excerpt').value;if(!text)return;
+ try{await navigator.clipboard.writeText(text);if(current===version)el('status').textContent='Selected lines copied.';}
+ catch{if(current!==version)return;el('excerpt').focus();el('excerpt').select();el('status').textContent='The excerpt is selected. Use your device’s Copy command.';}
+});
+el('print').addEventListener('click',()=>{if(el('excerpt').value)window.print();});
+</script></main></body></html>
