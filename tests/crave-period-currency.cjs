@@ -3,7 +3,8 @@ const ids=['compare-form','error','results','currency','update-status','a-spend'
 const e=Object.fromEntries(ids.map(id=>[id,{value:'',textContent:'',hidden:id==='results',events:{},addEventListener(n,f){this.events[n]=f},focus(){this.focused=true}}]));
 e.currency.value='CAD';let copied='';
 const ctx={document:{querySelector:s=>e[s.slice(1)]},navigator:{clipboard:{writeText:async s=>{copied=s}}},Intl,Number,Math,window:{}};
-vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/app.js','utf8'),ctx);
+const sourcePath=process.argv[2]||require('node:path').join(__dirname,'../src/cravebreaker/two-period-spending-comparison/app.js');
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(sourcePath,'utf8'),ctx);
 const calc=ctx.window.CravePeriodComparison.calculate;
 const fill=(a,ad,b,bd)=>{e['a-spend'].value=a;e['a-days'].value=ad;e['b-spend'].value=b;e['b-days'].value=bd};
 const submit=()=>e['compare-form'].events.submit({preventDefault(){}});
