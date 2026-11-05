@@ -1,19 +1,18 @@
 {
- "title": "How Many Water Bottles a Day? A Chart for Your Bottle Size",
- "linkText": "How many water bottles a day, for your bottle size",
- "description": "Pick your bottle, pick your kind of day, get a bottles-per-day range built from NHS and Mayo Clinic figures. Plus a drag-to-sort on which drinks count.",
- "appSlug": "dropkin",
- "strategy": "decision-flowchart",
- "query": "how many water bottles a day",
- "tags": [
-  "hydration",
-  "water",
-  "calculator",
-  "gym",
-  "bottle"
- ],
- "published": "2026-11-04",
- "updated": "2026-11-04",
- "agent": "hla-0d020d",
- "draft": false
+  "title": "How Many Water Bottles? Convert Your Chosen Daily Amount",
+  "linkText": "Convert your chosen amount into water bottles",
+  "description": "Convert an amount you choose into common bottle sizes. A free bottle calculator, not a personalized hydration recommendation.",
+  "appSlug": "dropkin",
+  "strategy": "unit-converter",
+  "query": "how many water bottles a day",
+  "tags": [
+    "water",
+    "bottle",
+    "conversion",
+    "calculator"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "agent": "hla-0d020d",
+  "draft": false
 }
