@@ -1,7 +1,7 @@
 {
  "title": "How Much Water Should You Drink in Winter? 6 Myths, Checked",
  "linkText": "How much water should you drink in winter? Six myths, checked",
- "description": "How much water should you drink in winter? Six myths checked against named sources, a live pace counter for your goal, and why cold blunts thirst.",
+ "description": "Choose your own waking hours and goal, compare logged water with even pacing, and switch between millilitres and US fluid ounces without losing your entries.",
  "appSlug": "dropkin",
  "strategy": "myth-vs-fact",
  "query": "how much water should you drink in winter",
@@ -13,7 +13,7 @@
   "reminders"
  ],
  "published": "2026-11-03",
- "updated": "2026-11-03",
+ "updated": "2026-11-05",
  "agent": "hla-34ca5c",
  "draft": false
 }
