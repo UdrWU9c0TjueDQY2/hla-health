@@ -28,16 +28,16 @@
   </section>
 
   <section class="calculator" id="calculator" aria-labelledby="calculator-title">
-    <div class="intro"><p class="eyebrow">THE CALCULATOR</p><h2 id="calculator-title">Use matching records, not estimates dressed as facts.</h2><p>Currency labels are for readability only. Both periods must use the same currency.</p></div>
+    <div class="intro"><p class="eyebrow">THE CALCULATOR</p><h2 id="calculator-title">Compare the records you have.</h2><p>Choose the currency used in both records. This calculator labels the amounts; it does not convert currencies. Each period can cover 1–366 whole days.</p><label for="currency">Currency for both periods</label><select id="currency" style="font:inherit;padding:10px;min-height:48px;max-width:100%"><option value="CAD">CAD — Canadian dollars</option><option value="USD">USD — US dollars</option><option value="EUR">EUR — euros</option><option value="GBP">GBP — British pounds</option><option value="AUD">AUD — Australian dollars</option></select><p id="update-status" role="status" aria-live="polite"></p></div>
     <form id="compare-form">
       <fieldset>
         <legend>Earlier period</legend>
-        <label for="a-spend">Amount spent</label><div class="money"><span aria-hidden="true">$</span><input id="a-spend" name="a-spend" type="number" inputmode="decimal" min="0" step="0.01" value="48" required></div>
+        <label for="a-spend">Amount spent in the selected currency</label><input id="a-spend" name="a-spend" type="number" inputmode="decimal" min="0" step="0.01" value="48" required>
         <label for="a-days">Days covered</label><input id="a-days" name="a-days" type="number" inputmode="numeric" min="1" max="366" step="1" value="14" required>
       </fieldset>
       <fieldset>
         <legend>Later period</legend>
-        <label for="b-spend">Amount spent</label><div class="money"><span aria-hidden="true">$</span><input id="b-spend" name="b-spend" type="number" inputmode="decimal" min="0" step="0.01" value="28" required></div>
+        <label for="b-spend">Amount spent in the selected currency</label><input id="b-spend" name="b-spend" type="number" inputmode="decimal" min="0" step="0.01" value="28" required>
         <label for="b-days">Days covered</label><input id="b-days" name="b-days" type="number" inputmode="numeric" min="1" max="366" step="1" value="14" required>
       </fieldset>
       <div class="form-actions"><button class="button" type="submit">Compare the records</button><button class="text-button" type="button" id="clear">Clear all values</button></div>
@@ -51,7 +51,7 @@
         <article><span>Daily-rate difference</span><strong id="difference"></strong><small>later average minus earlier average</small></article>
       </div>
       <p id="plain-result" class="plain-result"></p>
-      <details><summary>Why totals alone can mislead</summary><p>A $40 total over 7 days and a $40 total over 14 days are equal totals but different daily averages. This tool normalizes by the days you entered; it does not verify receipts or explain why spending changed.</p></details>
+      <details><summary>Why totals alone can mislead</summary><p>A total of 40 over 7 days and 40 over 14 days are equal totals but different daily averages. This tool divides each total by the days you entered. It does not verify receipts or explain why spending changed.</p></details>
       <div class="note-box"><h4>Neutral record note</h4><p id="record-note"></p><button type="button" class="text-button" id="copy">Copy this note</button><span id="copy-status" role="status"></span></div>
     </section>
     <noscript><p class="error">JavaScript is required for the comparison. The formula is amount ÷ days for each period, then later daily average minus earlier daily average.</p></noscript>
@@ -72,6 +72,7 @@
   </section>
 </main>
 <footer class="shell"><p>Publisher disclosure: Honest Little Apps publishes CraveBreaker and this separate free browser companion. This is not an independent review.</p><p>Educational arithmetic only. Not medical advice, diagnosis or treatment. If you need help with nicotine withdrawal, contact a clinician, pharmacist or quitline.</p></footer>
-<script src="app.js?v=1"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
+

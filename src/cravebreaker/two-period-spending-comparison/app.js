@@ -6,19 +6,22 @@
     aSpend: document.querySelector('#a-spend'), aDays: document.querySelector('#a-days'),
     bSpend: document.querySelector('#b-spend'), bDays: document.querySelector('#b-days')
   };
-  const money = value => new Intl.NumberFormat(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2}).format(value);
-  const number = (value, digits=2) => new Intl.NumberFormat(undefined,{maximumFractionDigits:digits}).format(value);
+  const currency = document.querySelector('#currency');
+  const updateStatus = document.querySelector('#update-status');
+  const money = value => new Intl.NumberFormat(undefined,{style:'currency',currency:currency.value,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
 
   function calculate(values){
     const {aSpend,aDays,bSpend,bDays}=values;
     if(![aSpend,aDays,bSpend,bDays].every(Number.isFinite)) throw new Error('Enter a number in all four fields.');
     if(aSpend<0 || bSpend<0) throw new Error('Spending totals cannot be negative.');
-    if(aDays<1 || bDays<1 || !Number.isInteger(aDays) || !Number.isInteger(bDays)) throw new Error('Days must be whole numbers of at least 1.');
+    if(aDays<1 || bDays<1 || aDays>366 || bDays>366 || !Number.isInteger(aDays) || !Number.isInteger(bDays)) throw new Error('Days must be whole numbers from 1 to 366.');
     const aDaily=aSpend/aDays, bDaily=bSpend/bDays, difference=bDaily-aDaily;
     return {aSpend,aDays,bSpend,bDays,aDaily,bDaily,difference};
   }
 
   function render(result){
+    document.querySelector('#copy-status').textContent='';
+    updateStatus.textContent='';
     document.querySelector('#a-daily').textContent=`${money(result.aDaily)} / day`;
     document.querySelector('#b-daily').textContent=`${money(result.bDaily)} / day`;
     document.querySelector('#a-formula').textContent=`${money(result.aSpend)} ÷ ${result.aDays} days`;
@@ -35,15 +38,28 @@
 
   form.addEventListener('submit', event => {
     event.preventDefault(); error.hidden=true;
-    try{render(calculate({aSpend:Number(fields.aSpend.value),aDays:Number(fields.aDays.value),bSpend:Number(fields.bSpend.value),bDays:Number(fields.bDays.value)}));}
+    try{
+      if(Object.values(fields).some(field=>field.value.trim()==='')) throw new Error('Enter a number in all four fields.');
+      render(calculate({aSpend:Number(fields.aSpend.value),aDays:Number(fields.aDays.value),bSpend:Number(fields.bSpend.value),bDays:Number(fields.bDays.value)}));
+    }
     catch(err){results.hidden=true;error.textContent=err.message;error.hidden=false;}
   });
-  document.querySelector('#clear').addEventListener('click',()=>{Object.values(fields).forEach(field=>field.value='');results.hidden=true;error.hidden=true;fields.aSpend.focus();});
+  function invalidate(){
+    if(!results.hidden) updateStatus.textContent='Values changed. Compare the records again to update the result.';
+    results.hidden=true;
+    error.hidden=true;
+    for(const id of ['a-daily','b-daily','a-formula','b-formula','difference','plain-result','record-note','copy-status']) document.querySelector('#'+id).textContent='';
+  }
+  Object.values(fields).forEach(field=>field.addEventListener('input',invalidate));
+  currency.addEventListener('change',invalidate);
+  document.querySelector('#clear').addEventListener('click',()=>{Object.values(fields).forEach(field=>field.value='');invalidate();updateStatus.textContent='All amounts and day counts cleared.';fields.aSpend.focus();});
   document.querySelector('#copy').addEventListener('click',async()=>{
     const status=document.querySelector('#copy-status');
+    if(results.hidden || !document.querySelector('#record-note').textContent){status.textContent='Compare the current records first.';return;}
     try{await navigator.clipboard.writeText(document.querySelector('#record-note').textContent);status.textContent='Copied.';}
     catch{status.textContent='Copy was unavailable. Select the note text instead.';}
   });
 
   window.CravePeriodComparison={calculate};
 })();
+
