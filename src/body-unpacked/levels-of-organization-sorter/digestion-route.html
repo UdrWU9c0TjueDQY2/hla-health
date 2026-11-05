@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Follow a bite through digestion | Body Unpacked</title><meta name="description" content="Trace the route through the digestive tract, then identify three organs that help from outside it. Eight questions with explanations."><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/levels-of-organization-sorter/digestion-route.html">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f3e9;color:#20342f;font:17px/1.55 system-ui,sans-serif}main{max-width:860px;padding:24px clamp(16px,5vw,48px) 50px;margin:auto}a{color:#185d4c;text-underline-offset:3px}h1{font:700 clamp(2.6rem,8vw,5rem)/.98 Georgia,serif;letter-spacing:-.055em;margin:2.1rem 0 1rem}h2{font-size:1.45rem;line-height:1.25}p{max-width:44rem}.lesson{background:#fff;border:1px solid #cbd3c8;border-radius:16px;padding:clamp(16px,4vw,32px);margin:1.4rem 0}.progress{font:700 .83rem system-ui;color:#466252;margin:0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(135px,100%),1fr));gap:.6rem}button{min-height:46px;border:1px solid #346451;border-radius:7px;color:#163b2c;background:#f3f8f0;padding:.65rem .9rem;font:650 1rem system-ui;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #a95023;outline-offset:3px}button:disabled{cursor:default}button[aria-pressed=true]{color:#fff;background:#235c45}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.actions button:first-child{color:white;background:#235c45}#feedback{min-height:2em}.trail{display:flex;flex-wrap:wrap;align-items:center;gap:.35em;padding:0;list-style:none}.trail li{font-size:.9rem;padding:.2rem .5rem;background:#e0eade;border-radius:.4rem}.store{display:inline-block;background:#235c45;color:#fff;border-radius:6px;padding:.65rem 1rem;text-decoration:none;font-weight:700}.source{font-size:.88rem;color:#40534b;margin-top:1.35rem}[hidden]{display:none!important}
+</style></head><body><main><a href="./">← Levels of organization</a><h1>Follow a bite.</h1><p>Where does food travel, and which organs help it along the way? Follow five steps through the digestive tract, then identify three organs by what they supply.</p>
+<section class="lesson" aria-labelledby="prompt"><p id="progress" class="progress"></p><h2 id="prompt" tabindex="-1"></h2><div id="choices" class="answers"></div><p id="feedback" role="status"></p><div class="actions"><button id="next" hidden>Next question</button><button id="show">Show answer</button></div><div id="visited" hidden><h3>Digestive tract covered so far</h3><ol id="trail" class="trail" aria-label="Tract sequence"></ol></div></section>
+<noscript>From the mouth, swallowed food reaches the esophagus, then the stomach and small intestine. Material continues through the large intestine. The liver, gallbladder and pancreas supply digestive substances.</noscript>
+<h2>Follow a nutrient next</h2><p>Body Unpacked connects foods with their nutrients and explains where those nutrients work in the body. This browser exercise covers general anatomy.</p><a class="store" href="https://apps.apple.com/us/app/body-unpacked-health-atlas/id6819135509">Explore Body Unpacked on iPhone or iPad</a>
+<p class="source">Anatomy reference: <a href="https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works">NIDDK’s guide to digestion</a>. Exercise by Honest Little Apps.</p></main>
+<script>
+const cards = [
+ {q:'After a bite is swallowed, which tube carries it to the stomach?',opts:['Small intestine','Esophagus','Pancreas'],a:'Esophagus',why:'Muscular contractions push swallowed food down the esophagus.',tag:'Esophagus'},
+ {q:'Which organ mixes that food with acid and enzymes?',opts:['Liver','Gallbladder','Stomach'],a:'Stomach',why:'The stomach mixes the food before releasing it into the small intestine.',tag:'Stomach'},
+ {q:'Where does most nutrient absorption take place?',opts:['Small intestine','Rectum','Gallbladder'],a:'Small intestine',why:'Digestion continues in the small intestine, where nutrients pass through the lining.',tag:'Small intestine'},
+ {q:'Which part of the tract receives the remaining material and absorbs water?',opts:['Pancreas','Large intestine','Esophagus'],a:'Large intestine',why:'The large intestine absorbs water as the remaining material forms stool.',tag:'Large intestine'},
+ {q:'Which part at the end of the large intestine stores stool before it leaves through the anus?',opts:['Stomach','Liver','Rectum'],a:'Rectum',why:'The rectum is part of the large intestine; the anus is the opening at the end.',tag:'Rectum → anus'},
+ {q:'Which helper organ produces bile?',opts:['Liver','Pancreas','Gallbladder'],a:'Liver',why:'The liver makes bile, which helps with fat digestion.'},
+ {q:'Which helper stores bile between meals?',opts:['Pancreas','Gallbladder','Stomach'],a:'Gallbladder',why:'The gallbladder stores bile and can send it to the small intestine.'},
+ {q:'Which helper supplies digestive enzymes through ducts to the small intestine?',opts:['Rectum','Esophagus','Pancreas'],a:'Pancreas',why:'The pancreas supplies enzymes that help break down carbohydrates, fats and proteins.'}
+];
+const el=id=>document.getElementById(id);let index=0,firstTry=0,tried=false,answered=false;
+function render(){
+ const card=cards[index];tried=false;answered=false;
+ el('progress').textContent=(index<5?'Food route':'Helper organs')+' · '+(index+1)+' of '+cards.length;
+ el('prompt').textContent=card.q;el('choices').replaceChildren();el('feedback').textContent='';
+ el('next').hidden=true;el('show').hidden=false;el('next').textContent=index===cards.length-1?'See summary':'Next question';
+ for(const option of card.opts){const b=document.createElement('button');b.textContent=option;b.addEventListener('click',()=>choose(option,b));el('choices').append(b);}
+}
+function choose(option,button){
+ if(answered)return;
+ if(option!==cards[index].a){tried=true;button.disabled=true;el('feedback').textContent=option+' does not fit this clue. Try another organ or show the answer.';return;}
+ if(!tried)firstTry++;finish(true);
+}
+function finish(chosen){
+ if(answered)return;answered=true;const card=cards[index];
+ for(const button of el('choices').children){button.disabled=true;button.setAttribute('aria-pressed',String(button.textContent===card.a));}
+ el('feedback').textContent=(chosen?'Correct. ':'Answer: '+card.a+'. ')+card.why;
+ if(card.tag){const li=document.createElement('li');li.textContent=card.tag;el('trail').append(li);el('visited').hidden=false;}
+ el('show').hidden=true;el('next').hidden=false;el('next').focus();
+}
+function restart(){
+ index=0;firstTry=0;el('trail').replaceChildren();const start=document.createElement('li');start.textContent='Mouth';el('trail').append(start);
+ el('visited').hidden=false;render();
+}
+el('show').addEventListener('click',()=>finish(false));
+el('next').addEventListener('click',()=>{
+ if(index===cards.length){restart();}
+ else if(++index===cards.length){el('choices').replaceChildren();el('progress').textContent='Exercise complete';el('prompt').textContent='Food route and helper organs';el('feedback').textContent='Correct on the first try: '+firstTry+' of '+cards.length+'. The route shows where material traveled. The liver, gallbladder and pancreas helped from outside it.';el('next').textContent='Start again';}
+ else render();el('prompt').focus();
+});restart();
+</script></body></html>
