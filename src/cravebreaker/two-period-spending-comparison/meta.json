@@ -1,0 +1,11 @@
+{
+  "title": "Vaping Spending Comparison Calculator: Two Periods, Private",
+  "description": "Compare two user-entered vaping spending periods with transparent per-day arithmetic. Free, private, no account and no saved data.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "compare vaping spending between two periods",
+  "tags": ["spending comparison", "private calculator", "quit vaping support"],
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "draft": false
+}
