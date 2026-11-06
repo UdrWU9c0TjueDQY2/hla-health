@@ -35,7 +35,8 @@ input,select,button{font:inherit} input,select{width:100%;min-width:0;color:#faf
 button,.cta{border:0;border-radius:.38rem;padding:.7rem 1rem;min-height:44px;cursor:pointer;font-weight:800}
 button.primary,.cta{background:#f4d381;color:#242319}button.neutral{background:#3b453d;color:#fff}
 button.remove{background:transparent;color:#f4d381;text-decoration:underline;padding:.5rem .3rem}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9cdbf3;outline-offset:3px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9cdbf3;outline-offset:3px}
+button:disabled{opacity:.5;cursor:not-allowed}
 .actions{margin-top:1rem;display:flex;gap:.7rem;align-items:center;flex-wrap:wrap}.small{font-size:.92rem;color:#c4c9be}
 .record,.product,.example{margin:1.6rem 0;padding-top:.75rem;border-top:1px solid #535c55}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.7rem;border-bottom:1px solid #434a43;padding:.6rem 0;align-items:center}.row small{display:block;color:#c4c9be}
@@ -43,14 +44,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 #summary{font-weight:800}.cta{display:inline-block;text-decoration:none}
 .product{display:grid;grid-template-columns:1fr minmax(7rem,10rem);gap:1rem;align-items:start}.product img{max-width:100%;height:auto;border-radius:.7rem}.privacy{margin:.8rem 0 0}.printOnly{display:none}
 @media(max-width:520px){.grid{grid-template-columns:1fr 1fr}.grid label:first-child{grid-column:1/-1}.product{grid-template-columns:1fr}.product img{max-width:9rem}.intro{padding-top:1.4rem}}
-@media print{html{color-scheme:light}body{background:white;color:black;font:12pt/1.4 sans-serif}.wrap{max-width:none;padding:0}.intro{padding:0}.intro p,form,.actions,.product,.example,header,footer,.remove,.privacy,noscript{display:none!important}.printOnly{display:block}.record{border-color:#444}.row small{color:#333}.row{break-inside:avoid}.paperline{border-bottom:1px solid #777;height:2.6rem}.small{color:#333}#status{display:none}h1{font-size:22pt}}
+@media print{html{color-scheme:light}body{background:white;color:black;font:12pt/1.4 sans-serif}.wrap{max-width:none;padding:0}.intro{padding:0}.intro p,form,.actions,.product,.example,header,footer,.remove,.privacy,noscript,#csv-record{display:none!important}.printOnly{display:block}.record{border-color:#444}.row small{color:#333}.row{break-inside:avoid}.paperline{border-bottom:1px solid #777;height:2.6rem}.small{color:#333}#status{display:none}h1{font-size:22pt}}
 </style>
 
 <!-- hla-public-referrals-v1 --><link rel="stylesheet" href="/assets/referrals/public-links.css"><script src="/assets/referrals/public-links.js" defer></script>
 </head>
 <body><div class="wrap">
 <header><a href="/">Small Health Habits</a> / Honest Little Apps</header>
-<main><section class="intro"><h1>Cardio and strength activity log</h1><p>Record a session you’ve already finished. See how many minutes you logged for each kind of activity, then print the record if you want to keep it.</p></section>
+<main><section class="intro"><h1>Cardio and strength activity log</h1><p>Record a session you’ve already finished. See how many minutes you logged for each kind of activity, then print the record or save its rows as a CSV file.</p></section>
 <form id="entry" autocomplete="off"><fieldset id="fields" disabled>
 <div class="grid">
 <label>Date<input name="day" type="date" required></label>
@@ -59,14 +60,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 <label class="wide">Activity name (optional)<input name="activity" type="text" maxlength="100" placeholder="e.g. Morning walk"></label>
 </div>
 <div class="actions"><button class="primary" type="submit">Add session</button></div>
-<p class="small privacy">Entries stay in this tab. Reloading or closing the page clears the log. Print before leaving to keep a copy.</p>
+<p class="small privacy">Entries stay in this tab. Reloading or closing the page clears the log. Print or save the recorded rows before leaving to keep a copy.</p>
 </fieldset></form>
 <noscript><p>To use the interactive log, turn on JavaScript. You can also print this page and fill out the blank rows by hand.</p></noscript>
 <section class="record" aria-labelledby="record-title"><h2 id="record-title">Your activity record</h2>
 <p id="summary">No sessions recorded yet.</p><ol id="rows"></ol>
 <p class="small" id="breakdown"></p><p role="status" id="status"></p>
 <div class="printOnly" id="blank"><p>Date · Activity type · Minutes · Activity name</p><div class="paperline"></div><div class="paperline"></div><div class="paperline"></div><div class="paperline"></div><div class="paperline"></div></div>
-<div class="actions"><button class="neutral" id="print" type="button">Print activity log</button></div>
+<div class="actions"><button class="neutral" id="print" type="button">Print activity log</button><button class="neutral" id="save-csv" type="button" disabled>Save recorded sessions (.csv)</button></div>
+<p class="small privacy">The CSV includes the date, type, minutes and activity name for every added session. Fields you have not added are excluded. A formula-looking name gets a visible “[text]” prefix. This separate record cannot be imported into Sturdy.</p>
+<div id="csv-record" hidden><label for="csv-text">Complete CSV to select if the file does not save</label><textarea id="csv-text" rows="8" readonly spellcheck="false" style="display:block;width:100%;min-height:9rem;margin-top:.4rem;padding:.7rem;background:#1c211e;color:#faf9f2;border:1px solid #859084;border-radius:.4rem;font: .9rem/1.5 monospace;resize:vertical"></textarea></div>
 </section>
 <section class="example"><h2>How to record a mixed session</h2><p>If a 30-minute session included both walking and lifting, you can log it once as “Mixed.” If you know you walked for 20 minutes and lifted for 10, enter those separately instead. Both methods give a 30-minute total.</p>
 <p class="small">The minutes describe what you recorded. Your care team can help with questions about which activities fit your circumstances.</p></section>
@@ -83,7 +86,24 @@ const localDate = [String(now.getFullYear()), String(now.getMonth() + 1).padStar
 form.elements.day.value = localDate;
 const rows = document.getElementById('rows');
 const status = document.getElementById('status');
+const csvButton = document.getElementById('save-csv');
+const csvRecord = document.getElementById('csv-record');
+const csvText = document.getElementById('csv-text');
+function csvCell(value, activityName = false) {
+  let text = String(value);
+  if (activityName && /^[\s\u0000-\u001f]*[=+\-@＝＋－＠]/u.test(text)) text = '[text] ' + text;
+  return '"' + text.replaceAll('"', '""') + '"';
+}
+function activityCsv() {
+  const lines = [['Date', 'Activity type', 'Minutes', 'Activity name'].map(value => csvCell(value)).join(',')];
+  for (const session of sessions) lines.push([csvCell(session.day), csvCell(session.kind), csvCell(session.minutes), csvCell(session.activity, true)].join(','));
+  return lines.join('\r\n') + '\r\n';
+}
 function showRecord() {
+  csvButton.disabled = sessions.length === 0;
+  csvRecord.hidden = true;
+  csvText.value = '';
+  status.textContent = '';
   rows.replaceChildren();
   const totals = new Map();
   let total = 0;
@@ -130,6 +150,28 @@ form.addEventListener('submit', (event) => {
   form.elements.minutes.focus();
 });
 document.getElementById('print').addEventListener('click', () => window.print());
+csvButton.addEventListener('click', () => {
+  if (!sessions.length) return;
+  const csv = activityCsv();
+  csvText.value = csv;
+  csvRecord.hidden = false;
+  let url;
+  let link;
+  try {
+    url = URL.createObjectURL(new Blob(['\uFEFF', csv], {type: 'text/csv;charset=utf-8;header=present'}));
+    link = document.createElement('a');
+    link.href = url;
+    link.download = 'sturdy-completed-activities.csv';
+    document.body.append(link);
+    link.click();
+    status.textContent = 'CSV prepared for ' + sessions.length + (sessions.length === 1 ? ' recorded session.' : ' recorded sessions.') + ' If the file did not save, select the complete CSV below.';
+  } catch (_) {
+    status.textContent = 'The file could not be started. Select the complete CSV below to keep your recorded rows.';
+  } finally {
+    link?.remove();
+    if (url) setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+});
 document.getElementById('fields').disabled = false;
 </script>
 </body></html>
