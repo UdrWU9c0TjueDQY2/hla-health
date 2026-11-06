@@ -26,7 +26,7 @@ buttons.forEach((b,i)=>b.addEventListener('click',()=>answer(i)));
 byId('next').addEventListener('click',()=>{if(!answered)return;if(index<2){index++;renderQuestion();}else{byId('progress').textContent='Practice complete';byId('question').textContent=score+' of 3 on this round.';byId('choices').hidden=true;byId('feedback').textContent='Review the direction card below. This small practice score is not an assessment of your anatomy knowledge.';byId('next').hidden=true;byId('restart').hidden=false;}});
 byId('restart').addEventListener('click',()=>{index=0;score=0;byId('choices').hidden=false;byId('next').hidden=false;byId('restart').hidden=true;document.querySelectorAll('.dot').forEach(x=>x.classList.remove('done'));renderQuestion();});
 byId('print').addEventListener('click',()=>window.print());
-let generatedSentenceText='';
+if(byId('sentence-form')){\nlet generatedSentenceText='';
 const sentenceInputs=[byId('structure-a'),byId('structure-b'),byId('direction-term')];
 function invalidateSentence(){
  generatedSentenceText='';
@@ -73,3 +73,4 @@ byId('save-sentence').addEventListener('click',()=>{
   setTimeout(()=>URL.revokeObjectURL(url),10000);byId('sentence-status').textContent='Practice file ready. Check your downloads.';
  }catch(error){revealSentenceFallback('Saving was unavailable. The complete text is selected below for manual copy.');}
 });
+\n}\n
