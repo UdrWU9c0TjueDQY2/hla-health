@@ -9,20 +9,21 @@
   <style>
     *{box-sizing:border-box}body{margin:0;background:#f3f8fb;color:#152f40;font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:700px;margin:auto;padding:18px}h1{font-size:1.5rem;line-height:1.2;margin:0 0 10px}p{margin:8px 0}.intro,.note{font-size:.875rem;color:#355369}.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}label{font-size:.875rem;font-weight:650;display:block}input,select,button{font:inherit;min-height:44px;border:1px solid #6b8798;border-radius:7px;padding:8px;width:100%;color:inherit;background:white}input,select{display:block;margin-top:4px;min-width:0}button{cursor:pointer;font-weight:700;width:auto;background:#e0edf5}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #1e5d96;outline-offset:3px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.result{background:white;border:1px solid #adc4d2;border-radius:9px;padding:12px}#answer{font-size:1.4rem;font-weight:750}a{color:#15547d;text-underline-offset:3px}.store{display:inline-block;min-height:44px;padding:8px 0;font-weight:700}footer{border-top:1px solid #adc4d2;margin-top:14px;padding-top:10px;font-size:.8rem;color:#355369}@media(max-width:370px){main{padding:12px}.grid{gap:10px;grid-template-columns:minmax(0,1fr)}h1{font-size:1.3rem}}@media print{body{background:white}main{max-width:none}.actions{display:none}}
   </style>
-  <script defer src="bottle-embed.js?v=1"></script>
+  <script defer src="bottle-embed.js?v=2"></script>
 </head>
 <body>
 <main>
   <h1>Bottle volume, in the unit you need</h1>
-  <p class="intro">Enter the full capacity and the fraction <strong>consumed</strong>. Volume arithmetic only; no drinking target or app install is required.</p>
+  <p class="intro">Enter the full bottle size and the fraction you drank or have left. See both amounts in millilitres.</p>
   <form id="bottle-form">
     <div class="grid">
       <label for="capacity">Full bottle capacity<input id="capacity" type="number" min="0.001" max="100000" step="0.001" value="750" required inputmode="decimal"></label>
       <label for="unit">Unit on the bottle<select id="unit"><option value="ml">Millilitres (mL)</option><option value="litre">Litres (L)</option><option value="us">US fluid ounces</option><option value="imperial">Imperial fluid ounces</option></select></label>
-      <label for="numerator">Parts consumed<input id="numerator" type="number" min="0" max="1000" step="1" value="1" required inputmode="numeric"></label>
+      <label for="meaning" style="grid-column:1/-1">My fraction describes<select id="meaning"><option value="consumed">What I drank</option><option value="remaining">What is left</option></select></label>
+      <label for="numerator"><span id="parts-label">Parts consumed</span><input id="numerator" type="number" min="0" max="1000" step="1" value="1" required inputmode="numeric"></label>
       <label for="denominator">Equal parts in a full bottle<input id="denominator" type="number" min="1" max="1000" step="1" value="2" required inputmode="numeric"></label>
     </div>
-    <p class="note">For three quarters, enter 3 and 4. If one quarter remains, enter 3 and 4 as the amount consumed. Fractions refer to volume, not bottle height.</p>
+    <p class="note">If a quarter of the bottle is left, choose “What is left” and enter 1 of 4 parts. Estimate the fraction of the full volume.</p>
     <div class="actions"><button type="submit">Convert bottle fraction</button><button type="button" id="reset">Reset example</button></div>
   </form>
   <section class="result" aria-label="Converted bottle amount" aria-live="polite" aria-atomic="true">
