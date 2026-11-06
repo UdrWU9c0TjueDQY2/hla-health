@@ -223,6 +223,16 @@ The card will include:
     const output = document.getElementById('plan-output');
     const copy = document.getElementById('copy-plan');
     const status = document.getElementById('copy-status');
+    let revision = 0;
+
+    function invalidate() {
+      revision++;
+      copy.disabled = true;
+      output.textContent = 'Your choices changed. Build a break swap again to update this card.';
+      status.textContent = 'Choices changed. The previous card is no longer ready to copy.';
+    }
+    form.addEventListener('input', invalidate);
+    form.addEventListener('change', invalidate);
 
     const firstMinute = {
       reset: 'Plant both feet. Let your shoulders drop. Take four slow, comfortable breaths, then name one thing you want the rest of the shift to feel like.',
@@ -286,6 +296,7 @@ The card will include:
 
     form.addEventListener('submit', event => {
       event.preventDefault();
+      revision++;
       status.textContent = '';
       output.textContent = buildPlan();
       copy.disabled = false;
@@ -293,6 +304,8 @@ The card will include:
     });
 
     form.addEventListener('reset', () => {
+      revision++;
+      copy.disabled = true;
       window.setTimeout(() => {
         output.textContent = 'Choose the purpose, time, setting and constraint. Then build a break swap.\n\nThe card will include:\n• a location cue\n• the first minute\n• the rest of the break\n• a return cue\n• a backup step';
         copy.disabled = true;
@@ -302,10 +315,16 @@ The card will include:
     });
 
     copy.addEventListener('click', async () => {
+      if (copy.disabled) return;
+      const snapshot = output.textContent;
+      const copiedRevision = revision;
+      const current = () => copiedRevision === revision && !copy.disabled && output.textContent === snapshot;
       try {
-        await navigator.clipboard.writeText(output.textContent);
+        await navigator.clipboard.writeText(snapshot);
+        if (!current()) return;
         status.textContent = 'Break card copied.';
       } catch (error) {
+        if (!current()) return;
         const range = document.createRange();
         range.selectNodeContents(output);
         const selection = window.getSelection();
