@@ -1,13 +1,19 @@
 {
   "title": "How to Say No When Someone Offers You a Vape | Practice Lab",
   "linkText": "Practice what to say when someone offers you a vape",
-  "description": "Compare brief declines, clear boundaries and exit moves across six realistic social vaping situations. No signup or personal text entry.",
+  "description": "Rehearse six social vaping situations, then copy, download or print a response card with a brief decline, boundary and exit option. Adult self-help practice.",
   "appSlug": "cravebreaker",
   "strategy": "interactive-tool",
   "query": "how to say no when someone offers you a vape",
-  "tags": ["quit-vaping", "social-triggers", "refusal-script", "boundaries", "adults"],
+  "tags": [
+    "quit-vaping",
+    "social-triggers",
+    "refusal-script",
+    "boundaries",
+    "adults"
+  ],
   "published": "2026-11-04",
-  "updated": "2026-11-04",
+  "updated": "2026-11-06",
   "agent": "codex",
   "draft": false
 }
