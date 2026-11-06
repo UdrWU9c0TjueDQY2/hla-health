@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict');
+const vm=require('node:vm');
+const fs=require('node:fs');
+const html=fs.readFileSync('src/cravebreaker/work-break-vape-routine-swap/index.html','utf8');
+const source=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1];
+const events={},timers=[];
+const el=(id,value='')=>({value,disabled:true,textContent:'',focus(){},addEventListener(e,fn){events[id+':'+e]=fn}});
+const purpose=el('purpose','reset');purpose[0]={focus(){}};
+const elements={'swap-form':el('form'),'plan-output':el('out'),'copy-plan':el('copy'),'copy-status':el('status'),setting:el('setting','station'),constraint:el('constraint','discreet')};
+elements['swap-form'].elements={purpose,minutes:el('minutes','2')};
+let resolveCopy,rejectCopy,requested,selected=0;
+vm.runInNewContext(source,{document:{getElementById:id=>elements[id],createRange:()=>({selectNodeContents(){selected++}})},window:{setTimeout:fn=>timers.push(fn),getSelection:()=>({removeAllRanges(){},addRange(){}})},navigator:{clipboard:{writeText:text=>{requested=text;return new Promise((resolve,reject)=>{resolveCopy=resolve;rejectCopy=reject})}}}});
+const submit=()=>events['form:submit']({preventDefault(){}}),copy=()=>events['copy:click']();
+(async()=>{
+ submit();assert.match(elements['plan-output'].textContent,/2 MINUTES/);assert.equal(elements['copy-plan'].disabled,false);
+ elements['swap-form'].elements.minutes.value='15';events['form:change']();assert.equal(elements['copy-plan'].disabled,true);assert.doesNotMatch(elements['plan-output'].textContent,/2 MINUTES/);
+ submit();assert.match(elements['plan-output'].textContent,/15 MINUTES/);
+ let p=copy();assert.match(requested,/15 MINUTES/);events['form:input']();resolveCopy();await p;assert.doesNotMatch(elements['copy-status'].textContent,/Break card copied/);
+ submit();p=copy();events['form:reset']();timers.splice(0).forEach(fn=>fn());rejectCopy(Error('blocked'));await p;assert.equal(selected,0);assert.equal(elements['copy-plan'].disabled,true);assert.equal(elements['copy-status'].textContent,'Planner reset.');
+ submit();p=copy();resolveCopy();await p;assert.equal(elements['copy-status'].textContent,'Break card copied.');
+ submit();p=copy();rejectCopy(Error('blocked'));await p;assert.equal(selected,1);assert.match(elements['copy-status'].textContent,/selected for manual copy/);
+ console.log('PASS: changed choices require rebuild; stale copy success/fallback suppressed; reset and ordinary copy/fallback preserved.');
+})().catch(e=>{console.error(e);process.exitCode=1});
