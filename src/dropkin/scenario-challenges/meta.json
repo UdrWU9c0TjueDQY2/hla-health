@@ -1,0 +1,14 @@
+{
+  "title": "Drink Routine Decisions",
+  "description": "27 interactive scenarios about reminder timing, record accuracy and practical drink-routine organization.",
+  "appSlug": "dropkin",
+  "strategy": "worked-scenario-quiz",
+  "query": "water reminder scenarios",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "dropkin"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Medication Record Clarity Checks",
+  "description": "27 scenarios about source accuracy, reminder events, private records and clear questions for professional conversations.",
+  "appSlug": "dosebeacon",
+  "strategy": "worked-scenario-quiz",
+  "query": "medication record accuracy scenarios",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "dosebeacon"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}
