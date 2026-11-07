@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">
+<title>Will one more episode fit? | Sleepward companion</title>
+<style>
+:root{color-scheme:light;font:16px/1.5 system-ui,sans-serif;color:#222736;background:#f7f5fa}*{box-sizing:border-box}body{margin:0}main{max-width:43rem;padding:clamp(.8rem,3vw,1.6rem);margin:auto}h1{font:600 clamp(1.7rem,5vw,2.35rem)/1.08 Georgia,serif;margin:0 0 .6rem}p{margin:.5rem 0}form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(11rem,100%),1fr));gap:.7rem;margin:1rem 0}label{font-size:.92rem;font-weight:650}input{display:block;width:100%;min-width:0;min-height:44px;font:inherit;color:#171e32;background:white;border:1px solid #79707f;border-radius:.35rem;padding:.35rem .5rem}input:focus-visible,a:focus-visible{outline:3px solid #533394;outline-offset:2px}output{display:block;border-left:4px solid #7356a0;background:#eae4f4;padding:.7rem .85rem}output strong{display:block;font-size:1.12rem}.note,footer{font-size:.87rem}footer{margin-top:1rem}a{color:#422476}
+</style>
+</head>
+<body><main><h1>Will one more episode fit?</h1><p>Choose when you want to finish your evening routine. See how much viewing time fits before you need to start it.</p>
+<form id="window" onsubmit="return false">
+<label>Viewing starts<input id="start" type="time" value="21:45" required></label>
+<label>Routine finishes by<input id="finish" type="time" value="22:30" required></label>
+<label>Minutes left to watch<input id="episode" type="number" inputmode="numeric" min="1" max="720" value="42" required></label>
+<label>Routine length (minutes)<input id="routine" type="number" inputmode="numeric" min="0" max="720" value="15" required></label></form>
+<output aria-live="polite" for="start finish episode routine"><strong id="headline"></strong><span id="detail"></span></output>
+<p class="note">Use local clock times within a 12-hour window. An earlier finish time means the next day. Allow for breaks or ads in the minutes left to watch.</p>
+<footer>Manual web exercise by Honest Little Apps. <a href="https://apps.apple.com/us/app/sleepward-bedtime-routine/id6796299594" target="_blank" rel="noopener noreferrer">View Sleepward on the US App Store</a>.</footer><noscript>Subtract the routine minutes from the time available. The remainder is your viewing window.</noscript></main>
+<script>
+'use strict';
+const get = id => document.getElementById(id);
+function minutes(value) {
+  if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value)) return null;
+  const [hours, mins] = value.split(':').map(Number);
+  return hours * 60 + mins;
+}
+function clock(value) {
+  const minute = value % 1440;
+  return String(Math.floor(minute / 60)).padStart(2,'0') + ':' + String(minute % 60).padStart(2,'0') + (value >= 1440 ? ' next day' : '');
+}
+function render() {
+  const start = minutes(get('start').value);
+  const finish = minutes(get('finish').value);
+  const episode = get('episode').valueAsNumber;
+  const routine = get('routine').valueAsNumber;
+  const show = (title, detail) => { get('headline').textContent = title; get('detail').textContent = detail; };
+  if (start === null || finish === null || !Number.isInteger(episode) || episode < 1 || episode > 720 || !Number.isInteger(routine) || routine < 0 || routine > 720) {
+    show('Check your times and durations.', 'Enter two times, 1–720 viewing minutes, and 0–720 routine minutes.');
+    return;
+  }
+  const windowMinutes = (finish - start + 1440) % 1440;
+  if (windowMinutes > 720) { show('Check the finish time.', 'Choose a finish no more than 12 hours after viewing starts.'); return; }
+  if (routine > windowMinutes) {
+    show('The routine alone exceeds this window.', 'Starting it immediately would finish at ' + clock(start + routine) + ', ' + (routine - windowMinutes) + ' min past your chosen finish.');
+    return;
+  }
+  const available = windowMinutes - routine;
+  if (episode <= available) {
+    const spare = available - episode;
+    show(spare ? 'The episode fits with ' + spare + ' min to spare.' : 'The episode fits exactly.',
+      'Viewing ends at ' + clock(start + episode) + '. Starting your routine then would finish it at ' + clock(start + episode + routine) + '.');
+    return;
+  }
+  show(available ? 'Pause after ' + available + ' min.' : 'There is no viewing time in this window.',
+    'Start your routine at ' + clock(start + available) + '. You would have ' + (episode - available) + ' min left to watch another time.');
+}
+get('window').addEventListener('input', render);
+render();
+</script></body></html>

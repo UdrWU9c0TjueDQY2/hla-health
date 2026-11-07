@@ -1,0 +1,778 @@
+[
+ {
+  "title": "Everyday record-keeping cards | Honest Little Apps",
+  "description": "Seven small exercises for clearer personal records. Original exercises with copy and print controls.",
+  "appSlug": "portfolio",
+  "strategy": "independent-activity-collection",
+  "query": "everyday record-keeping cards",
+  "tags": [
+   "original activity",
+   "printable",
+   "health"
+  ],
+  "path": "/activities/practical-try-it-cards/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/activities/practical-try-it-cards/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Small Health Habits: Mini-Challenges with Worked Answers",
+  "description": "Choose a free challenge collection, compare answer choices and read the worked explanation. Original companion activities from Honest Little Apps.",
+  "appSlug": "resources",
+  "strategy": "challenge-collection-index",
+  "query": "small health habits practice questions",
+  "tags": [
+   "mini challenges"
+  ],
+  "path": "/activities/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/activities/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Health Headline Evidence Practice: Six Fictional Cases",
+  "description": "Repair six fictional research headlines using study design, population and absolute numbers. Free browser and printable activity.",
+  "appSlug": "body-unpacked",
+  "strategy": "interactive-tool",
+  "query": "health research evidence literacy practice",
+  "tags": [
+   "health literacy",
+   "research evidence",
+   "classroom activity"
+  ],
+  "path": "/body-unpacked/health-headline-evidence-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/health-headline-evidence-practice/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Body-Learning Source Detective",
+  "description": "27 reasoning scenarios about diagrams, source scope, measurements and careful health-information study notes.",
+  "appSlug": "body-unpacked",
+  "strategy": "worked-scenario-quiz",
+  "query": "anatomy diagram reasoning",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "body-unpacked"
+  ],
+  "path": "/body-unpacked/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Support and Record Choices",
+  "description": "27 scenarios for practicing clear support requests, private records and accurate personal-plan summaries.",
+  "appSlug": "cravebreaker",
+  "strategy": "worked-scenario-quiz",
+  "query": "quit support communication practice",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "cravebreaker"
+  ],
+  "path": "/cravebreaker/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Medication Record Clarity Checks",
+  "description": "27 scenarios about source accuracy, reminder events, private records and clear questions for professional conversations.",
+  "appSlug": "dosebeacon",
+  "strategy": "worked-scenario-quiz",
+  "query": "medication record accuracy scenarios",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "dosebeacon"
+  ],
+  "path": "/dosebeacon/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dosebeacon/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Drink Routine Decisions",
+  "description": "27 interactive scenarios about reminder timing, record accuracy and practical drink-routine organization.",
+  "appSlug": "dropkin",
+  "strategy": "worked-scenario-quiz",
+  "query": "water reminder scenarios",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "dropkin"
+  ],
+  "path": "/dropkin/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Personal Notes, Clear Conversations",
+  "description": "27 scenarios about accurate timelines, private summaries and focused appointment questions.",
+  "appSlug": "my-midlife-story",
+  "strategy": "worked-scenario-quiz",
+  "query": "midlife journal scenarios",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "my-midlife-story"
+  ],
+  "path": "/my-midlife-story/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Evening Plan Decision Studio",
+  "description": "27 practical choices about evening handoffs, shared routines, preparation and clear next steps.",
+  "appSlug": "sleepward",
+  "strategy": "worked-scenario-quiz",
+  "query": "evening routine scenarios",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "sleepward"
+  ],
+  "path": "/sleepward/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sleepward/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Strength Log Reasoning Lab",
+  "description": "27 scenarios for checking exercise records, units, sources, preparation and questions for qualified guidance.",
+  "appSlug": "sturdy",
+  "strategy": "worked-scenario-quiz",
+  "query": "workout log accuracy questions",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "sturdy"
+  ],
+  "path": "/sturdy/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Vaping Spending Comparison Calculator: Two Periods, Private",
+  "description": "Compare two user-entered vaping spending periods with transparent per-day arithmetic. Free, private, no account and no saved data.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "compare vaping spending between two periods",
+  "tags": [
+   "spending comparison",
+   "private calculator",
+   "quit vaping support"
+  ],
+  "path": "/cravebreaker/two-period-spending-comparison/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Anatomical Directional Terms Quiz for Beginners",
+  "description": "Three questions, clear explanations, a printable direction card and a private sentence builder from Body Unpacked's publisher.",
+  "appSlug": "body-unpacked",
+  "strategy": "scenario-story",
+  "query": "anatomical directional terms quiz for beginners",
+  "tags": [
+   "anatomy",
+   "learning",
+   "quiz"
+  ],
+  "path": "/body-unpacked/anatomical-directional-terms-quiz/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/anatomical-directional-terms-quiz/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Sagittal, Coronal or Transverse? Interactive Anatomy Planes",
+  "description": "Explore sagittal, coronal and transverse planes in a labeled model. Print a free one-page partner challenge with original diagrams, answers and a complete text edition.",
+  "appSlug": "body-unpacked",
+  "strategy": "interactive-tool",
+  "query": "sagittal coronal transverse planes interactive diagram",
+  "tags": [],
+  "path": "/body-unpacked/anatomical-planes-explorer/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/anatomical-planes-explorer/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Anatomy Apps for Nursing Students: 6 Compared (Nov 2026)",
+  "description": "Six anatomy and physiology apps for a first-year nursing student, checked against App Store listings this month: cost, purpose, who should pick what.",
+  "appSlug": "body-unpacked",
+  "strategy": "honest-comparison",
+  "query": "anatomy apps for nursing students",
+  "tags": [
+   "nursing",
+   "anatomy",
+   "physiology",
+   "apps",
+   "comparison"
+  ],
+  "path": "/body-unpacked/anatomy-apps-for-nursing-students/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/anatomy-apps-for-nursing-students/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "First Sign of a Cold: An 8-Step Checklist From the Trials",
+  "description": "What to do at the first sign of a cold: an 8-step checklist with the pooled trial numbers on sleep, vitamin C, zinc and vitamin D. Scratch each claim.",
+  "appSlug": "body-unpacked",
+  "strategy": "checklist",
+  "query": "what to do at the first sign of a cold",
+  "tags": [
+   "cold",
+   "vitamin-c",
+   "zinc",
+   "vitamin-d",
+   "evidence",
+   "winter"
+  ],
+  "path": "/body-unpacked/first-sign-of-a-cold-what-to-do-checklist/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/first-sign-of-a-cold-what-to-do-checklist/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Levels of Organization in the Human Body: Interactive Order Practice",
+  "description": "Put six human-body organization levels in order, from chemical to organism. Explore examples, check your sequence and reveal the explanation.",
+  "appSlug": "body-unpacked",
+  "strategy": "interactive-tool",
+  "query": "levels of organization human body interactive",
+  "tags": [],
+  "path": "/body-unpacked/levels-of-organization-sorter/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/levels-of-organization-sorter/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Medical Word Parts Practice: 8 Body Roots, Two Ways",
+  "description": "Practice eight body word parts in both directions, review missed pairs and download a printable worksheet with a separate answer key. Free, no account.",
+  "appSlug": "body-unpacked",
+  "strategy": "interactive-tool",
+  "query": "medical word parts practice body roots",
+  "tags": [
+   "medical terminology",
+   "body vocabulary",
+   "practice"
+  ],
+  "path": "/body-unpacked/medical-word-parts-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/body-unpacked/medical-word-parts-practice/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Ask for Help Quitting Vaping: Make a Specific Support Message",
+  "description": "Build an editable message asking someone you trust for practical quit-vaping support. Choose what helps and what stays private. Nothing is sent.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "ask for help quitting vaping text message",
+  "tags": [],
+  "path": "/cravebreaker/quit-vaping-support-message/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/quit-vaping-support-message/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "How to Say No When Someone Offers You a Vape | Practice Lab",
+  "description": "Rehearse six social vaping situations, then copy, download or print a response card with a brief decline, boundary and exit option. Adult self-help practice.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "how to say no when someone offers you a vape",
+  "tags": [
+   "quit-vaping",
+   "social-triggers",
+   "refusal-script",
+   "boundaries",
+   "adults"
+  ],
+  "path": "/cravebreaker/social-vape-refusal-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/social-vape-refusal-practice/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Vape-Free Days Tracker: See Progress Beyond a Streak",
+  "description": "Build a free 14-day vaping progress calendar. Separate recorded vape-free days, longest runs and missing days. Try an example, then track privately with CraveBreaker.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-tool",
+  "query": "vape free days tracker after slip",
+  "tags": [
+   "vape-free days",
+   "progress calendar",
+   "CraveBreaker"
+  ],
+  "path": "/cravebreaker/vape-free-progress-calendar/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/vape-free-progress-calendar/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "What to Do Instead of Vaping on Work Breaks | Free Planner",
+  "description": "Keep the break and change the routine. Build a private two-, five-, ten- or fifteen-minute swap around your work setting.",
+  "appSlug": "cravebreaker",
+  "strategy": "interactive-planner",
+  "query": "what to do instead of vaping on work breaks",
+  "tags": [
+   "quit-vaping",
+   "work-break",
+   "routine",
+   "triggers",
+   "adults"
+  ],
+  "path": "/cravebreaker/work-break-vape-routine-swap/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/work-break-vape-routine-swap/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Pill Reminder App vs Pill Organizer: First Night Home",
+  "description": "What to do when a parent comes home from hospital with new medicines: a 10-item checklist with a progress ring, plus pillbox vs app vs both, compared.",
+  "appSlug": "dosebeacon",
+  "strategy": "checklist",
+  "query": "pill reminder app vs pill organizer",
+  "tags": [
+   "caregivers",
+   "medication",
+   "checklist",
+   "aging-parents"
+  ],
+  "path": "/dosebeacon/pill-reminder-app-vs-pill-organizer/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dosebeacon/pill-reminder-app-vs-pill-organizer/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Medication Reminder vs Medication Log: Six Practice Cases",
+  "description": "Practice distinguishing reminders, helper claims, reported doses, pending sharing and conflicting records. No patient details or dosing decisions.",
+  "appSlug": "dosebeacon",
+  "strategy": "interactive-practice",
+  "query": "medication reminder vs medication log",
+  "tags": [
+   "caregivers",
+   "medication",
+   "records",
+   "family"
+  ],
+  "path": "/dosebeacon/reminder-vs-dose-record/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dosebeacon/reminder-vs-dose-record/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Shared Medication App for Siblings: Group Chat vs One Record",
+  "description": "Three siblings, one parent, nine pills a day. One week via the group chat, the fridge chart and a shared record. Did Mum get her 6pm? needs an answer.",
+  "appSlug": "dosebeacon",
+  "strategy": "scenario-story",
+  "query": "shared medication app for siblings",
+  "tags": [
+   "caregivers",
+   "siblings",
+   "medication",
+   "aging-parents",
+   "comparison"
+  ],
+  "path": "/dosebeacon/shared-medication-app-for-siblings/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dosebeacon/shared-medication-app-for-siblings/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Water Reminders During Holiday Travel: A Dropkin Setup Checklist",
+  "description": "Review your bottle, waking hours and quiet settings with a five-point travel checklist and an annotated Dropkin screenshot.",
+  "appSlug": "dropkin",
+  "strategy": "seasonal",
+  "query": "water reminders during holiday travel",
+  "tags": [
+   "water",
+   "reminders",
+   "travel"
+  ],
+  "path": "/dropkin/holiday-travel-reminder-reset/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/holiday-travel-reminder-reset/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "How Many Water Bottles? Convert Your Chosen Daily Amount",
+  "description": "Convert an amount you choose into common bottle sizes. A free bottle calculator, not a personalized hydration recommendation.",
+  "appSlug": "dropkin",
+  "strategy": "unit-converter",
+  "query": "how many water bottles a day",
+  "tags": [
+   "water",
+   "bottle",
+   "conversion",
+   "calculator"
+  ],
+  "path": "/dropkin/how-many-water-bottles-a-day/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/how-many-water-bottles-a-day/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "mL to Fluid Ounces Converter: US vs Imperial Bottle Sizes",
+  "description": "Convert a bottle size between mL, litres, US fluid ounces and Imperial fluid ounces. See both ounce systems side by side with clear conversion factors.",
+  "appSlug": "dropkin",
+  "strategy": "interactive tool with specific search intent and verified feature bridge",
+  "query": "mL to Fluid Ounces Converter: US vs Imperial Bottle Sizes",
+  "tags": [
+   "dropkin",
+   "volume",
+   "free tool"
+  ],
+  "path": "/dropkin/ml-to-fluid-ounces-bottle-converter/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/ml-to-fluid-ounces-bottle-converter/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Partial Water Bottle Calculator: Quarter, Half and Three-Quarter in mL",
+  "description": "Calculate the millilitres in part of your water bottle. Compare quarter, half and three-quarter amounts before logging what you drank.",
+  "appSlug": "dropkin",
+  "strategy": "interactive-tool",
+  "query": "half water bottle millilitres calculator",
+  "tags": [
+   "water-bottle",
+   "volume",
+   "logging"
+  ],
+  "path": "/dropkin/partial-bottle-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/partial-bottle-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Remember to Drink Water at Work: Free Cue Card Planner",
+  "description": "Build printable reminders around moments already in your workday. Edit your bottle spot and cues, then copy or print.",
+  "appSlug": "dropkin",
+  "strategy": "interactive-planner",
+  "query": "remember to drink water at work",
+  "tags": [
+   "water",
+   "workday",
+   "reminders"
+  ],
+  "path": "/dropkin/remember-water-at-work/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/remember-water-at-work/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Menopause at Work Conversation Planner | Private Outline",
+  "description": "Build a private outline around work impact, one practical request, a privacy boundary and a review date.",
+  "appSlug": "my-midlife-story",
+  "strategy": "interactive-planner",
+  "query": "menopause at work conversation planner",
+  "tags": [
+   "menopause",
+   "work",
+   "conversation",
+   "privacy",
+   "manager"
+  ],
+  "path": "/my-midlife-story/menopause-at-work-conversation-planner/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/menopause-at-work-conversation-planner/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Best Menopause Tracking App for Privacy? 5 Compared (2026)",
+  "description": "Which menopause tracking app keeps notes on your phone? Five apps compared from their listings on accounts, data and doctor reports, plus a sample brief.",
+  "appSlug": "my-midlife-story",
+  "strategy": "honest-comparison",
+  "query": "best menopause tracking app",
+  "tags": [
+   "menopause",
+   "perimenopause",
+   "symptom-tracker",
+   "privacy",
+   "doctor-visit"
+  ],
+  "path": "/my-midlife-story/menopause-tracker-app-privacy-compared/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/menopause-tracker-app-privacy-compared/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Days Between Period Start Dates — A Descriptive Log Tool",
+  "description": "Calculate the days between recorded period starts. See every interval and a simple summary, with no next-period prediction or medical interpretation.",
+  "appSlug": "my-midlife-story",
+  "strategy": "interactive-tool",
+  "query": "days between period start dates calculator",
+  "tags": [
+   "date log",
+   "period notes",
+   "appointment preparation"
+  ],
+  "path": "/my-midlife-story/period-start-gap-log/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/period-start-gap-log/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Menopause Symptom Diary Printable | My Midlife Story",
+  "description": "Print a blank diary, inspect an annotated appointment example and copy a three-question agenda. Free companion; no health-note entry.",
+  "appSlug": "my-midlife-story",
+  "strategy": "printable",
+  "query": "menopause symptom diary printable",
+  "tags": [
+   "diary",
+   "appointments",
+   "menopause"
+  ],
+  "path": "/my-midlife-story/symptom-diary-printable/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/my-midlife-story/symptom-diary-printable/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Bedtime Routine Calculator: Plan Your Evening Backwards",
+  "description": "Enter your own routine steps and chosen finish time. Get a copyable timetable with midnight transitions labelled.",
+  "appSlug": "sleepward",
+  "strategy": "interactive-planner",
+  "query": "bedtime routine time calculator",
+  "tags": [
+   "evening",
+   "routine",
+   "planning"
+  ],
+  "path": "/sleepward/bedtime-backwards-planner/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sleepward/bedtime-backwards-planner/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Bedtime Routine Checklist for Adults | Evening Transition Lab",
+  "description": "Choose the friction and time available to compare 12 small close-keep-shift bedtime transition examples. No signup or sleep score.",
+  "appSlug": "sleepward",
+  "strategy": "interactive-tool",
+  "query": "bedtime routine checklist for adults",
+  "tags": [
+   "bedtime-routine",
+   "evening-reset",
+   "wind-down",
+   "sleepward",
+   "checklist"
+  ],
+  "path": "/sleepward/bedtime-transition-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sleepward/bedtime-transition-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Cardio and Strength Activity Log | Sturdy",
+  "description": "Record completed cardio, strength and mixed sessions, total your minutes by activity type, and print a copy. Entries stay in this tab.",
+  "appSlug": "sturdy",
+  "strategy": "interactive-tool",
+  "query": "printable cardio and strength activity log",
+  "tags": [
+   "activity-log",
+   "cardio",
+   "strength",
+   "printable"
+  ],
+  "path": "/sturdy/cardio-vs-strength-training-on-ozempic/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/cardio-vs-strength-training-on-ozempic/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "GLP-1 Strength Training Weekly Planner | Free Time Map",
+  "description": "Choose 5, 15 or 30-minute windows and available equipment, then download a personal weekly time map. Includes two Sturdy app screenshots.",
+  "appSlug": "sturdy",
+  "strategy": "interactive-tool",
+  "query": "GLP-1 strength training weekly planner",
+  "tags": [
+   "strength",
+   "weekly-planner",
+   "GLP-1",
+   "time-map",
+   "equipment"
+  ],
+  "path": "/sturdy/flexible-week-map/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/flexible-week-map/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "How to Work Out When Tired on GLP-1: The 5-Minute Session",
+  "description": "How to work out when tired on GLP-1: pick today’s situation (nausea, wiped out, injection day, sore) and get the mistake to avoid plus a 5-minute session.",
+  "appSlug": "sturdy",
+  "strategy": "mistake-fix",
+  "query": "how to work out when tired on GLP-1",
+  "tags": [
+   "glp-1",
+   "strength",
+   "fatigue",
+   "five-minute",
+   "planner"
+  ],
+  "path": "/sturdy/how-to-work-out-when-tired-on-glp-1-5-minute-session/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/how-to-work-out-when-tired-on-glp-1-5-minute-session/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Lean Mass vs Muscle Mass on GLP-1: 12 Terms Explained",
+  "description": "What \"40% lean mass\" actually means, in a chat. Twelve terms people mix up on GLP-1: lean mass, DXA, sarcopenia, grams per kilo, reps in reserve.",
+  "appSlug": "sturdy",
+  "strategy": "glossary",
+  "query": "lean mass vs muscle mass on glp-1",
+  "tags": [
+   "glp-1",
+   "muscle",
+   "glossary",
+   "strength",
+   "protein"
+  ],
+  "path": "/sturdy/lean-mass-vs-muscle-mass-on-glp-1/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/lean-mass-vs-muscle-mass-on-glp-1/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Protein Target Divider: Use Your Agreed Goal | Sturdy",
+  "description": "Divide a protein target you already agreed with your care team into arithmetic parts. No recommended target, food plan or promised health outcome.",
+  "appSlug": "sturdy",
+  "strategy": "interactive-arithmetic-tool",
+  "query": "protein with no appetite on ozempic",
+  "tags": [
+   "glp-1",
+   "protein",
+   "appetite",
+   "steps",
+   "ozempic"
+  ],
+  "path": "/sturdy/protein-with-no-appetite-on-ozempic/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/protein-with-no-appetite-on-ozempic/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "How to Log an Unfinished Workout",
+  "description": "Distinguish planned, completed, skipped and unrecorded work with a fictional log and six-line template.",
+  "appSlug": "sturdy",
+  "strategy": "recordkeeping-guide",
+  "query": "how to log unfinished workout planned vs completed",
+  "tags": [
+   "records",
+   "planning",
+   "workouts"
+  ],
+  "path": "/sturdy/unfinished-workout-log/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/unfinished-workout-log/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Workout Summary for a Doctor Appointment | Sturdy",
+  "description": "Choose what to bring to a doctor's appointment and keep observations separate from guesses. A free Sturdy companion.",
+  "appSlug": "sturdy",
+  "strategy": "decision-flowchart",
+  "query": "workout summary for doctor appointment",
+  "tags": [
+   "strength",
+   "appointments",
+   "records"
+  ],
+  "path": "/sturdy/workout-summary-doctor-appointment/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/workout-summary-doctor-appointment/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "How to Quit Vaping: 6 Mistakes That Cost You (and the Fix)",
+  "description": "How to quit vaping without the six mistakes that cost the most days and money: counting from zero after a slip, waiting for willpower, never pricing it.",
+  "appSlug": "cravebreaker",
+  "strategy": "mistake-fix",
+  "query": "how to quit vaping",
+  "tags": [
+   "quit-vaping",
+   "cravings",
+   "nicotine",
+   "money",
+   "adults",
+   "health"
+  ],
+  "path": "/cravebreaker/how-to-quit-vaping-mistakes-that-cost-you/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/how-to-quit-vaping-mistakes-that-cost-you/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Pill Reminder App for Elderly Parents: a First-Week Guide",
+  "description": "A pill reminder app for elderly parents, set up by the sibling who lives far away: three taps to pick your role, a 20-minute setup, the first seven days.",
+  "appSlug": "dosebeacon",
+  "strategy": "first-week-guide",
+  "query": "pill reminder app for elderly parents",
+  "tags": [
+   "medication",
+   "elderly-parents",
+   "caregiving",
+   "family",
+   "reminders"
+  ],
+  "path": "/dosebeacon/pill-reminder-app-elderly-parents-first-week/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dosebeacon/pill-reminder-app-elderly-parents-first-week/",
+  "published": "2026-11-03",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "How Much Water Should You Drink in Winter? 6 Myths, Checked",
+  "description": "Choose your own waking hours and goal, compare logged water with even pacing, and switch between millilitres and US fluid ounces without losing your entries.",
+  "appSlug": "dropkin",
+  "strategy": "myth-vs-fact",
+  "query": "how much water should you drink in winter",
+  "tags": [
+   "water",
+   "hydration",
+   "winter",
+   "cold-weather",
+   "reminders"
+  ],
+  "path": "/dropkin/how-much-water-in-winter-myths/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/dropkin/how-much-water-in-winter-myths/",
+  "published": "2026-11-03",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Revenge Bedtime Procrastination When You Work From Home",
+  "description": "Revenge bedtime procrastination working from home: one evening told twice, a planner that works back from your alarm, and an app that never scores sleep.",
+  "appSlug": "sleepward",
+  "strategy": "scenario-story",
+  "query": "revenge bedtime procrastination working from home",
+  "tags": [
+   "sleep",
+   "bedtime",
+   "remote-work",
+   "evening-routine"
+  ],
+  "path": "/sleepward/revenge-bedtime-procrastination-working-from-home/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sleepward/revenge-bedtime-procrastination-working-from-home/",
+  "published": "2026-11-03",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Workouts Feel Harder on a GLP-1? Five Fixes (2026)",
+  "description": "Why workouts feel harder on a GLP-1 like semaglutide or tirzepatide, and five fixes: shorter sessions, a protein floor, sore-area swaps, chair-stand check.",
+  "appSlug": "sturdy",
+  "strategy": "mistake-fix",
+  "query": "workouts feel harder on a GLP-1",
+  "tags": [
+   "glp-1",
+   "strength",
+   "protein",
+   "health"
+  ],
+  "path": "/sturdy/workouts-feel-harder-on-glp-1/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-health/sturdy/workouts-feel-harder-on-glp-1/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ }
+]

@@ -1,0 +1,9 @@
+'use strict';
+function summarize(days){let total=0,longest=0,run=0,unknown=0,vaped=0;for(const s of days){if(s==='free'){total++;run++;longest=Math.max(longest,run);}else{run=0;if(s==='unknown')unknown++;else if(s==='vaped')vaped++;else throw Error('Invalid status');}}return {total,longest,end:run,unknown,vaped};}
+if(typeof module!=='undefined')module.exports={summarize};
+if(typeof document!=='undefined'){
+const $=id=>document.getElementById(id),states=Array(14).fill('unknown');
+function paint(){const r=summarize(states);$('total').textContent=r.total;$('longest').textContent=r.longest;$('ending').textContent=r.end;$('status').textContent=`${r.total} recorded vape-free days; ${r.vaped} days marked vaped; ${r.unknown} day(s) not recorded. Longest recorded run: ${r.longest}. Run at the end of this window: ${r.end}.`;$('summary').value=states.map((s,i)=>`Day ${i+1}: ${s==='free'?'vape-free':s==='vaped'?'vaped':'not recorded'}`).join('\n')+'\n'+$('status').textContent;document.querySelectorAll('#days select').forEach((e,i)=>{e.value=states[i];e.parentElement.dataset.state=states[i]});}
+states.forEach((s,i)=>{const label=document.createElement('label');label.textContent=`Day ${i+1}`;const select=document.createElement('select');select.setAttribute('aria-label',`Day ${i+1}`);[['unknown','Not recorded'],['free','Vape-free'],['vaped','Vaped']].forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;select.append(o)});select.addEventListener('change',()=>{states[i]=select.value;paint()});label.append(select);$('days').append(label)});
+$('example').addEventListener('click',()=>{states.splice(0,14,...['free','free','free','vaped','free','free','unknown','free','free','free','free','vaped','free','free']);paint()});
+$('reset').addEventListener('click',()=>{states.fill('unknown');paint()});paint();}

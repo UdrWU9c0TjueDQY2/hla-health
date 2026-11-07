@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vaping Spending Comparison Calculator: Two Periods, Private</title>
+  <meta name="description" content="Compare two user-entered vaping spending periods with transparent per-day arithmetic. Free, private, no account and no saved data.">
+  <link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="apple-itunes-app" content="app-id=6787461078">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Compare two spending periods without guessing">
+  <meta property="og:description" content="Enter two totals and the days each covers. See the arithmetic, write a neutral note, then clear everything.">
+  <meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/">
+  <meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-health/assets/cravebreaker/icon-512.webp">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Two-period vaping spending comparison","url":"https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Honest Little Apps"}}</script>
+
+<!-- hla-public-referrals-v1 --><link rel="stylesheet" href="/hla-health/assets/referrals/public-links.css"><script src="/hla-health/assets/referrals/public-links.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#calculator">Skip to calculator</a>
+<header class="shell"><a class="brand" href="../../"><img src="../../assets/cravebreaker/icon-128.webp" width="42" height="42" alt="">Honest Little Apps</a><a class="store" href="https://apps.apple.com/us/app/cravebreaker-quit-vaping/id6787461078">CraveBreaker on the App Store</a></header>
+<main class="shell">
+  <section class="hero">
+    <p class="eyebrow">PRIVATE SPENDING ARITHMETIC</p>
+    <h1>Compare two periods.<br><span>Keep the claim honest.</span></h1>
+    <p class="lead">Enter what you actually spent and how many days each total covers. The calculator shows the period totals, daily averages and difference—without claiming where the difference came from.</p>
+    <a class="button" href="#calculator">Compare two periods</a>
+  </section>
+
+  <section class="calculator" id="calculator" aria-labelledby="calculator-title">
+    <div class="intro"><p class="eyebrow">THE CALCULATOR</p><h2 id="calculator-title">Compare the records you have.</h2><p>Choose the currency used in both records. This calculator labels the amounts; it does not convert currencies. Each period can cover 1–366 whole days.</p><label for="currency">Currency for both periods</label><select id="currency" style="font:inherit;padding:10px;min-height:48px;max-width:100%"><option value="CAD">CAD — Canadian dollars</option><option value="USD">USD — US dollars</option><option value="EUR">EUR — euros</option><option value="GBP">GBP — British pounds</option><option value="AUD">AUD — Australian dollars</option></select><p id="update-status" role="status" aria-live="polite"></p></div>
+    <form id="compare-form">
+      <fieldset>
+        <legend>Earlier period</legend>
+        <label for="a-spend">Amount spent in the selected currency</label><input id="a-spend" name="a-spend" type="number" inputmode="decimal" min="0" step="0.01" value="48" required>
+        <label for="a-days">Days covered</label><input id="a-days" name="a-days" type="number" inputmode="numeric" min="1" max="366" step="1" value="14" required>
+      </fieldset>
+      <fieldset>
+        <legend>Later period</legend>
+        <label for="b-spend">Amount spent in the selected currency</label><input id="b-spend" name="b-spend" type="number" inputmode="decimal" min="0" step="0.01" value="28" required>
+        <label for="b-days">Days covered</label><input id="b-days" name="b-days" type="number" inputmode="numeric" min="1" max="366" step="1" value="14" required>
+      </fieldset>
+      <div class="form-actions"><button class="button" type="submit">Compare the records</button><button class="text-button" type="button" id="clear">Clear all values</button></div>
+    </form>
+    <div id="error" class="error" role="alert" hidden></div>
+    <section id="results" class="results" aria-live="polite" hidden>
+      <h3>Transparent comparison</h3>
+      <div class="cards">
+        <article><span>Earlier daily average</span><strong id="a-daily"></strong><small id="a-formula"></small></article>
+        <article><span>Later daily average</span><strong id="b-daily"></strong><small id="b-formula"></small></article>
+        <article><span>Daily-rate difference</span><strong id="difference"></strong><small>later average minus earlier average</small></article>
+      </div>
+      <p id="plain-result" class="plain-result"></p>
+      <details><summary>Why totals alone can mislead</summary><p>A total of 40 over 7 days and 40 over 14 days are equal totals but different daily averages. This tool divides each total by the days you entered. It does not verify receipts or explain why spending changed.</p></details>
+      <div class="note-box"><h4>Neutral record note</h4><p id="record-note"></p><button type="button" class="text-button" id="copy">Copy this note</button><span id="copy-status" role="status"></span></div>
+    </section>
+    <noscript><p class="error">JavaScript is required for the comparison. The formula is amount ÷ days for each period, then later daily average minus earlier daily average.</p></noscript>
+  </section>
+
+  <section class="limits" aria-labelledby="video-title" id="daily-rate-example">
+    <p class="eyebrow">20-SECOND ILLUSTRATED EXAMPLE</p>
+    <h2 id="video-title">A smaller total can hide a higher daily rate.</h2>
+    <p>These fictional CAD entries show why two records need their day counts. This is an illustration of the separate browser worksheet, not footage from the iPhone app.</p>
+    <video controls playsinline preload="none" width="720" height="960" poster="period-rates-poster.png" style="display:block;width:100%;max-width:420px;height:auto;border-radius:18px;background:#101f29">
+      <source src="period-rates.mp4" type="video/mp4">
+      <track kind="captions" src="period-rates.vtt" srclang="en" label="English" default>
+      <p><a href="period-rates.mp4">Download the illustrated example (MP4)</a> or read the transcript below.</p>
+    </video>
+    <p><a href="period-rates.mp4" download>Download the 20-second video</a> · <a href="#calculator">Try your own two periods</a></p>
+    <details><summary>Read the complete video transcript</summary><p>Fictional entries, both in CAD: the earlier total is 84 over 28 days, or 3 per day. The later total is 56 over 14 days, or 4 per day. Although the later total is smaller, its daily average is 1 higher. Divide each amount by the days it covers before comparing daily averages. Use your own records in the worksheet above. A spending difference does not explain why spending changed, and the comparison does not measure a health or quitting outcome. Honest Little Apps publishes this separate CraveBreaker companion and the optional iPhone app linked below.</p></details>
+  </section>
+
+  <section class="limits">
+    <h2>What this result can—and cannot—say.</h2>
+    <div class="limit-grid">
+      <article><h3>It can compare</h3><p>Two totals, their entered day counts, two daily averages and the arithmetic difference.</p></article>
+      <article><h3>It cannot verify</h3><p>Receipts, purchases, nicotine use, cravings, health changes, abstinence or the cause of any difference.</p></article>
+      <article><h3>It does not save</h3><p>Values stay in this page while it is open. Reloading or pressing Clear removes them. Hosting access logs may still exist.</p></article>
+    </div>
+  </section>
+
+  <section class="app-panel">
+    <img src="../../assets/cravebreaker/icon-128.webp" width="82" height="82" alt="CraveBreaker app icon">
+    <div><p class="eyebrow">OPTIONAL NEXT STEP</p><h2>Keep private records on your iPhone.</h2><p>The current CraveBreaker listing says every craving tool, the quit plan, reasons, craving log, journal, data export, progress record, basic patterns and a savings estimate are free. Optional Premium adds missions, preparation sessions, detailed insights and a monthly money report.</p><a class="button" href="https://apps.apple.com/us/app/cravebreaker-quit-vaping/id6787461078">View CraveBreaker on the App Store</a><p class="fine">Free download with optional weekly, annual and one-time lifetime purchases. Check the current offer before purchasing.</p></div>
+  </section>
+<section class="hla-guide-referral" aria-label="Share this resource" data-share-title="Vaping Spending Comparison Calculator: Two Periods, Private" data-public-url="https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/"><h2>Useful for someone else?</h2><p>Share the public guide. Your entries and results are not included.</p><a href="https://udrwu9c0tjuedqy2.github.io/hla-health/cravebreaker/two-period-spending-comparison/">Open the public guide link</a></section></main>
+<footer class="shell"><p>Publisher disclosure: Honest Little Apps publishes CraveBreaker and this separate free browser companion. This is not an independent review.</p><p>Educational arithmetic only. Not medical advice, diagnosis or treatment. If you need help with nicotine withdrawal, contact a clinician, pharmacist or quitline.</p></footer>
+<script src="app.js?v=2"></script>
+</body>
+</html>
+
